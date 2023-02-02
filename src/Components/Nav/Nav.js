@@ -4,13 +4,14 @@ import './Nav.css';
 const Nav = () => {
     return (
         <header className='navbar'>
-            <select>
-                <option value='action'>Action</option>
-                <option value='comedy'>Comedy</option>
-                <option value='drama'>Drama</option>
-                <option value='family'>Family</option>
-                <option value='horror'>Horror</option>
-                <option value='thriller'>Thriller</option>
+            <select className='dropdown'>
+                <option value='alphabetical'>Alphabetical </option>
+                <option value='movie rating high-low'>Movie Rating: High-Low </option>
+                <option value='year released high-low'>Year Released: High-Low </option>
+                <option value='renevue high-low'>Revenue: High-Low </option>
+                <option value='movie rating low-high'>Movie Rating: Low-High </option>
+                <option value='year released low-high'>Year Released: Low-High </option>
+                <option value='renevue low-high'>Revenue: Low-High </option>
             </select>
             <ul>
                 <li>Action</li>
@@ -20,6 +21,10 @@ const Nav = () => {
                 <li>Horror</li>
                 <li>Thriller</li>
             </ul>
+            <form>
+                <input type="text" placeholder="Search.." name="search" />
+                <button type="submit">Submit</button>
+            </form>
         </header>
     )
 }

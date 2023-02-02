@@ -12,13 +12,11 @@ class App extends Component {
 
   render() {
     return(
-      <main>
+      <main className='app'>
         <Nav />
       </main>
     )
   }
-
-
 }
 
 export default App;
