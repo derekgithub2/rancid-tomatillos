@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Nav from '../Nav/Nav'
 
 class App extends Component {
   constructor() {
@@ -11,8 +12,9 @@ class App extends Component {
 
   render() {
     return(
-      //JSX here
-      console.log('render function here')
+      <main>
+        <Nav />
+      </main>
     )
   }
 
