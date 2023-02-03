@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black;  */
+    height: 5vh;
+    background-color: darkgray;
+    padding: 10px 20px;
+}
+
+.dropdown {
+    height: 50%;
+}
+
+li {
+    padding: 10px;
+    transition: transform 750ms;
+    will-change: transform;
+}
+li:hover,
+li:focus {
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
