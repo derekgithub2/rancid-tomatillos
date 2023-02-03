@@ -2,7 +2,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid black; 
+    /* border: 1px solid black;  */
+    height: 5vh;
+    background-color: darkgray;
+    padding: 10px 20px;
 }
 
 .dropdown {
