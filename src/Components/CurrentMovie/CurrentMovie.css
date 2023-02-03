@@ -1,0 +1,14 @@
+.current-movie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    width: 50vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 70%;
+    font-size: xx-large;
+    color: white;
+}

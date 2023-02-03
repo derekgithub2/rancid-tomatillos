@@ -3,6 +3,7 @@ import './App.css';
 import Nav from '../Nav/Nav'
 import movieData from '../../movieData'
 import Movies from '../Movies/Movies'
+import CurrentMovie from '../CurrentMovie/CurrentMovie'
 
 class App extends Component {
   constructor() {
@@ -25,8 +26,12 @@ class App extends Component {
   render() {
     return(
       <main className='app'>
-        <Nav />
-        <Movies movies={this.state.movies} getCurrentMovie={this.getCurrentMovie}/>
+        {this.state.currentMovie && <CurrentMovie currentMovie={this.state.currentMovie}/>}
+        {!this.state.currentMovie && 
+        <div>
+          <Nav />
+          <Movies movies={this.state.movies} getCurrentMovie={this.getCurrentMovie}/>
+        </div>}
       </main>
     )
   }
