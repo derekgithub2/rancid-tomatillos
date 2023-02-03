@@ -1,0 +1,11 @@
+.card {
+    box-sizing: border-box;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.card > img {
+    height: 60vh;
+    max-width: 100%;
+    cursor: pointer;
+}
