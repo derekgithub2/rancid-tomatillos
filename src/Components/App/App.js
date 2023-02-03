@@ -9,19 +9,24 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      currentMovie: '',
     };
   }
 
   componentDidMount() {
     this.setState({movies: movieData.movies})
   }
-  // functions in here
+
+  getCurrentMovie = (id) => {
+    const userSelection = this.state.movies.find(movie => movie.id === id)
+    this.setState({ currentMovie: userSelection })
+  }
 
   render() {
     return(
       <main className='app'>
         <Nav />
-        <Movies movies={this.state.movies}/>
+        <Movies movies={this.state.movies} getCurrentMovie={this.getCurrentMovie}/>
       </main>
     )
   }
