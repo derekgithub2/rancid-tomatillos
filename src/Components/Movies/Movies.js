@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../Card/Card";
 import './Movies.css'
 
-const Movies = ({movies, getCurrentMovie, displayAllMovies}) => {
+const Movies = ({movies, getCurrentMovie}) => {
 
     const sortedMovies = movies.map(movie => movie).sort((a, b) => a.title.localeCompare(b.title))
 
@@ -14,7 +14,6 @@ const Movies = ({movies, getCurrentMovie, displayAllMovies}) => {
                 id={movie.id}
                 key={movie.id}
                 getCurrentMovie={getCurrentMovie}
-                displayAllMovies={displayAllMovies}
             />
         )
     })

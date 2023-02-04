@@ -23,14 +23,14 @@ class App extends Component {
     this.setState({ currentMovie: userSelection })
   }
 
-  displayAllMovies() {
+  displayAllMovies = () => {
     this.setState({ currentMovie: '' })
   }
 
   render() {
     return(
       <main className='app'>
-        {this.state.currentMovie && <CurrentMovie currentMovie={this.state.currentMovie}/>}
+        { this.state.currentMovie && <CurrentMovie currentMovie={this.state.currentMovie} displayAllMovies={this.displayAllMovies}/> }
         {!this.state.currentMovie && 
           <div>
             <Nav />
