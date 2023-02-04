@@ -1,0 +1,24 @@
+.current-movie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    width: 50vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: xx-large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px
+}
