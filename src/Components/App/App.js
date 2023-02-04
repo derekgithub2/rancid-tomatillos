@@ -4,6 +4,9 @@ import Nav from '../Nav/Nav'
 import movieData from '../../movieData'
 import Movies from '../Movies/Movies'
 import CurrentMovie from '../CurrentMovie/CurrentMovie'
+import {
+  getAllMovies
+} from '../../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -11,11 +14,16 @@ class App extends Component {
     this.state = {
       movies: [],
       currentMovie: '',
+      error: '',
     };
   }
 
   componentDidMount() {
-    this.setState({movies: movieData.movies})
+    getAllMovies()
+    .then((data => {
+      this.setState({movies: data.movies})
+    }))
+    // Need to create a catch for error handing
   }
 
   getCurrentMovie = (id) => {
