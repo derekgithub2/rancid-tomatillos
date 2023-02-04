@@ -5,7 +5,8 @@ import movieData from '../../movieData'
 import Movies from '../Movies/Movies'
 import CurrentMovie from '../CurrentMovie/CurrentMovie'
 import {
-  getAllMovies
+  getAllMovies,
+  getSingleMovie
 } from '../../apiCalls'
 
 class App extends Component {
@@ -28,7 +29,12 @@ class App extends Component {
 
   getCurrentMovie = (id) => {
     const userSelection = this.state.movies.find(movie => movie.id === id)
-    this.setState({ currentMovie: userSelection })
+    getSingleMovie(userSelection.id)
+      .then((data => {
+        this.setState({ currentMovie: data.movie })
+        console.log(data)
+      }))
+          // Need to create a catch for error handing
   }
 
   displayAllMovies = () => {
