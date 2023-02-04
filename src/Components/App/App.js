@@ -29,7 +29,10 @@ class App extends Component {
     const userSelection = this.state.movies.find(movie => movie.id === id)
     getSingleMovie(userSelection.id)
       .then((data => this.setState({ currentMovie: data.movie })))
-      .catch(error => this.setState({error: 'Something went wrong'}))
+      .catch(error => 
+        this.setState({error: 'Something went wrong'}),
+        alert("Something went wrong. Please give us a few minutes.")
+      )
   }
 
   displayAllMovies = () => {
