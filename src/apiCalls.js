@@ -5,4 +5,12 @@ const getAllMovies = () => {
     .then(res => res.json())
 }
 
-export { getAllMovies }
+// function to get single movie 
+// need to pass in id
+
+const getSingleMovie = (id) => {
+    return fetch(`${url}/movies/${id}`)
+    .then(res => res.json())
+}
+
+export { getAllMovies, getSingleMovie }
