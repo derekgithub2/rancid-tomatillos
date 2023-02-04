@@ -23,6 +23,10 @@ class App extends Component {
     this.setState({ currentMovie: userSelection })
   }
 
+  displayAllMovies() {
+    this.setState({ currentMovie: '' })
+  }
+
   render() {
     return(
       <main className='app'>
