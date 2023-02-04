@@ -1,7 +1,8 @@
 import React from 'react';
 import './CurrentMovie.css'
+import backbutton from '../../images/backbutton.png' 
 
-const CurrentMovie = ({ currentMovie }) => {
+const CurrentMovie = ({ currentMovie, displayAllMovies }) => {
 
     const currentMovieStyle = {
         backgroundImage: `url(${currentMovie.backdrop_path})`,
@@ -13,13 +14,12 @@ const CurrentMovie = ({ currentMovie }) => {
     return (
         <div className="current-movie" style={currentMovieStyle}>
             <section className="left-section">
+                <img src={backbutton} alt="backbutton" onClick={() => displayAllMovies()}/>
                 <p>MOVIE DETAILS HERE</p>
                 <p>{currentMovie.title}</p>
-                <p></p>
+                <p>Average Rating: {currentMovie.average_rating}</p>
+                <p>Release Date: {currentMovie.release_date}</p>
             </section>
-            {/* <section className="right-section">
-                <img src={currentMovie.poster_path}/>
-            </section> */}
         </div>
     )
 }
