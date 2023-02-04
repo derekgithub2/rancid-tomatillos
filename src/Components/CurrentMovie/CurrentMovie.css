@@ -7,8 +7,7 @@
 .left-section {
     width: 50vw;
     height: 100vh;
-    background-color: black;
-    opacity: 70%;
+    background: rgba(0, 0, 0, 0.5);
     font-size: xx-large;
     color: white;
     display: flex;
