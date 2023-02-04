@@ -28,10 +28,10 @@ class App extends Component {
       <main className='app'>
         {this.state.currentMovie && <CurrentMovie currentMovie={this.state.currentMovie}/>}
         {!this.state.currentMovie && 
-        <div>
-          <Nav />
-          <Movies movies={this.state.movies} getCurrentMovie={this.getCurrentMovie}/>
-        </div>}
+          <div>
+            <Nav />
+            <Movies movies={this.state.movies} getCurrentMovie={this.getCurrentMovie}/>
+          </div>}
       </main>
     )
   }

@@ -11,4 +11,15 @@
     opacity: 70%;
     font-size: xx-large;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px
 }

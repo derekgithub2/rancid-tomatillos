@@ -14,10 +14,9 @@ const CurrentMovie = ({ currentMovie, displayAllMovies }) => {
     return (
         <div className="current-movie" style={currentMovieStyle}>
             <section className="left-section">
-                <img src={backbutton} alt="backbutton" onClick={() => displayAllMovies()}/>
-                <p>MOVIE DETAILS HERE</p>
-                <p>{currentMovie.title}</p>
-                <p>Average Rating: {currentMovie.average_rating}</p>
+                <img className="back-button" src={backbutton} alt="backbutton" onClick={() => displayAllMovies()}/>
+                <h3>{currentMovie.title}</h3>
+                <p>Average Rating: {currentMovie.average_rating.toFixed(2)}</p>
                 <p>Release Date: {currentMovie.release_date}</p>
             </section>
         </div>
