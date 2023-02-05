@@ -1,24 +1,50 @@
-.current-movie {
+/* .current-movie {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 .left-section {
-    width: 50vw;
+    width: 40vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
-    font-size: xx-large;
+    /* font-size: large; */
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+}
+
+.button-wrapper {
+    height: 10vh;
+    width: inherit;
 }
 
 .back-button {
     position: absolute;
     cursor: pointer;
-    top: 10px;
-    left: 10px
+    top: 2vh;
+    left: 2vh;
+    height: 5vh;
+}
+
+.movieDetails {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    justify-content: space-evenly;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 5vh;
+    font-weight: bold;
+    width: 30vw;
+}
+
+.overview {
+    width: 30vw;
+    font-size: 2.5vh;
 }
