@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from '../Nav/Nav'
-import movieData from '../../movieData'
 import Movies from '../Movies/Movies'
 import CurrentMovie from '../CurrentMovie/CurrentMovie'
 import {
