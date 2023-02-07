@@ -7,6 +7,8 @@ import {
   getAllMovies,
   getSingleMovie
 } from '../../apiCalls'
+import { Route } from 'react-router-dom'
+
 
 class App extends Component {
   constructor() {
@@ -39,12 +41,27 @@ class App extends Component {
   render() {
     return(
       <main className='app'>
-        { this.state.currentMovie && <CurrentMovie currentMovie={this.state.currentMovie} displayAllMovies={this.displayAllMovies}/> }
+        {/* { this.state.currentMovie && <CurrentMovie currentMovie={this.state.currentMovie} displayAllMovies={this.displayAllMovies}/> }
         {!this.state.currentMovie && 
           <div>
             <Nav />
             <Movies movies={this.state.movies} getCurrentMovie={this.getCurrentMovie}/>
-          </div>}
+          </div>} */}
+          <Route exact path='/' render={() => {
+            return(
+              <div>
+                <Nav />
+                <Movies movies={this.state.movies}/>
+              </div>
+            )
+          }}/>
+          <Route
+            exact path='/:id'
+            render={({match}) => {
+              let id = parseInt(match.params.id)
+              return <CurrentMovie getCurrentMovie={this.getCurrentMovie}/>
+            }}
+          />
       </main>
     )
   }
