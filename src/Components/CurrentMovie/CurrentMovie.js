@@ -47,10 +47,6 @@ class CurrentMovie extends Component {
         }
 
         return (
-            // ISSUES:
-                // line 61: genres.join(" | ")
-                // line 64: release_date.slice(0, 4)
-                // 1ine 66: average_rating.toFixed(2)
             <div className="current-movie" style={currentMovieStyle}>
                 <aside className="left-section">
                     <Link to='/' className='button-wrapper'>
@@ -58,12 +54,12 @@ class CurrentMovie extends Component {
                     </Link>
                     <section>
                         <div className='movieDetails'>
-                            {/* <p>{this.state.currentMovie.genres.join(" | ")}</p> */}
+                            <p>{String(this.state.currentMovie.genres).split(",").join(" | ")}</p>
                             <p>{toHoursAndMinutes(this.state.currentMovie.runtime)}</p>
                         </div>
-                        {/* <p className='title'>{this.state.currentMovie.title} ({this.state.currentMovie.release_date.slice(0,4)})</p> */}
+                        <p className='title'>{this.state.currentMovie.title} ({String(this.state.currentMovie.release_date).slice(0,4)})</p>
                         <p className='overview'>{this.state.currentMovie.overview}</p>
-                        {/* <p>Rating: {this.state.currentMovie.average_rating.toFixed(2)}</p> */}
+                        <p>Rating: {Number(this.state.currentMovie.average_rating).toFixed(2)}</p>
                         <p>Budget: {formatter.format(this.state.currentMovie.budget)}</p>
                         <p>Revenue: {formatter.format(this.state.currentMovie.revenue)}</p>
                     </section>
