@@ -15,13 +15,7 @@ class CurrentMovie extends Component {
 
     componentDidMount() {
         getSingleMovie(this.props.currentMovieId)
-            .then((data => {
-                this.setState({ currentMovie: data.movie })
-                console.log(this.state.currentMovie.genres)
-                console.log(this.state.currentMovie.release_date)
-                console.log(this.state.currentMovie.average_rating)
-            }
-            ))
+            .then((data => this.setState({ currentMovie: data.movie })))
             .catch(error => this.setState({ error: 'Something went wrong.' }))
     }
 
