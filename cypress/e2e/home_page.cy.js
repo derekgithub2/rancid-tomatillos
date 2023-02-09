@@ -1,8 +1,7 @@
 describe('Home page', () => {
     beforeEach(() => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-
-        cy.visit('http://localhost:3000')
+        cy.visit('http://localhost:3000/')
 
     })
 
@@ -46,6 +45,7 @@ describe('Home page', () => {
     })
 
     it('should be able to open movie details when user clicks submit', () => {
+        
         // return to write test when functionality built out
         // potential sad path when user types wrong movie name?
     })
@@ -55,6 +55,22 @@ describe('Home page', () => {
         cy.get('.movieContainer').children()
           .should('have.length', 40)
           .find('img')
+    })
+
+    it('should be able to open movie details when user clicks poster', () => {
+        cy.get('.card').first().click()
+        cy.url().should('eq', 'http://localhost:3000/49046')
+    })
+
+    it('should not open the wrong poster when the user clicks a poster', () => {
+        cy.get('.card').first().click()
+        cy.url().should('not.eq', 'http://localhost:3000/760104')
+
+        cy.get('.back-button').click()
+        cy.url().should('eq', 'http://localhost:3000/')
+
+        cy.get('.card').last().click()
+        cy.url().should('not.eq', 'http://localhost:3000/49046')
     })
 
 })
