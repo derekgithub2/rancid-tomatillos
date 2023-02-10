@@ -7,7 +7,7 @@ const Nav = ({movies}) => {
 
     const movieTitles = sortedMovies.map(movie => {
         return (
-            <option id={movie.id}>{movie.title}</option>
+            <option key ={movie.id} id={movie.id}>{movie.title}</option>
         )
     })
     
@@ -31,7 +31,7 @@ const Nav = ({movies}) => {
                 <li>Thriller</li>
             </ul>
             <form>
-                <input type="text" list="titles" placeholder="Search.."  autocomplete="on" name="search" />
+                <input type="text" list="titles" placeholder="Search.."  autoComplete="off" name="search" />
                 <datalist id="titles">{movieTitles}</datalist>
                 <button type="submit">Submit</button>
             </form>
