@@ -1,7 +1,16 @@
 import React from 'react';
 import './Nav.css';
 
-const Nav = () => {
+const Nav = ({movies}) => {
+    
+    const sortedMovies = movies.map(movie => movie).sort((a, b) => a.title.localeCompare(b.title))
+
+    const movieTitles = sortedMovies.map(movie => {
+        return (
+            <option id={movie.id}>{movie.title}</option>
+        )
+    })
+    
     return (
         <header className='navbar'>
             <select id="sortSelection" className='dropdown'>
@@ -22,7 +31,8 @@ const Nav = () => {
                 <li>Thriller</li>
             </ul>
             <form>
-                <input type="text" placeholder="Search.." name="search" />
+                <input type="text" list="titles" placeholder="Search.."  autocomplete="on" name="search" />
+                <datalist id="titles">{movieTitles}</datalist>
                 <button type="submit">Submit</button>
             </form>
         </header>
