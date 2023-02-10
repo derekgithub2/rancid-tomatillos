@@ -20,4 +20,14 @@ const getSingleMovie = (id) => {
     })
 }
 
-export { getAllMovies, getSingleMovie }
+const getMovieVideo = (id) => {
+    return fetch(`${url}/${id}/videos`)
+    .then(res => {
+        if(!res.ok) {
+            throw new Error('Something went wrong')
+        }
+        return res.json()
+    })
+}
+
+export { getAllMovies, getSingleMovie, getMovieVideo }
