@@ -4,14 +4,6 @@ import Form from '../../Form';
 
 const Nav = ({movies}) => {
     
-    // const sortedMovies = movies.map(movie => movie).sort((a, b) => a.title.localeCompare(b.title))
-
-    // const movieTitles = sortedMovies.map(movie => {
-    //     return (
-    //         <option key ={movie.id} id={movie.id}>{movie.title}</option>
-    //     )
-    // })
-    
     return (
         <header className='navbar'>
             <select id="sortSelection" className='dropdown'>
@@ -32,11 +24,6 @@ const Nav = ({movies}) => {
                 <li>Thriller</li>
             </ul>
             <Form movies={movies}/>
-            {/* <form>
-                <input type="text" list="titles" placeholder="Search.."  autoComplete="off" name="search" />
-                <datalist id="titles">{movieTitles}</datalist>
-                <button type="submit">Submit</button>
-            </form> */}
         </header>
     )
 }
