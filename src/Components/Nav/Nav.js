@@ -1,15 +1,16 @@
 import React from 'react';
 import './Nav.css';
+import Form from '../../Form';
 
 const Nav = ({movies}) => {
     
-    const sortedMovies = movies.map(movie => movie).sort((a, b) => a.title.localeCompare(b.title))
+    // const sortedMovies = movies.map(movie => movie).sort((a, b) => a.title.localeCompare(b.title))
 
-    const movieTitles = sortedMovies.map(movie => {
-        return (
-            <option key ={movie.id} id={movie.id}>{movie.title}</option>
-        )
-    })
+    // const movieTitles = sortedMovies.map(movie => {
+    //     return (
+    //         <option key ={movie.id} id={movie.id}>{movie.title}</option>
+    //     )
+    // })
     
     return (
         <header className='navbar'>
@@ -30,11 +31,12 @@ const Nav = ({movies}) => {
                 <li>Horror</li>
                 <li>Thriller</li>
             </ul>
-            <form>
+            <Form movies={movies}/>
+            {/* <form>
                 <input type="text" list="titles" placeholder="Search.."  autoComplete="off" name="search" />
                 <datalist id="titles">{movieTitles}</datalist>
                 <button type="submit">Submit</button>
-            </form>
+            </form> */}
         </header>
     )
 }
