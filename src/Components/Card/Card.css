@@ -1,12 +1,18 @@
 .card {
     box-sizing: border-box;
-    border: 3px solid black;
+    border: 5px solid black;
     padding: 10px;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    padding: 5px;
 }
 
 .card > img {
-    height: 60vh;
+    object-fit: cover;
+    max-height: 100%;
     max-width: 100%;
     cursor: pointer;
     /* border-radius: 7px; */
