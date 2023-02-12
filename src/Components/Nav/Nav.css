@@ -3,9 +3,13 @@ header {
     align-items: center;
     justify-content: space-between;
     /* border: 1px solid black;  */
-    height: 5vh;
-    background-color: darkgray;
+    height: 7vh;
+    background-color: #12713D;
     padding: 10px 20px;
+}
+
+.logo {
+    height: 5vh;
 }
 
 .dropdown {

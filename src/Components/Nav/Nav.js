@@ -1,12 +1,14 @@
 import React from 'react';
 import './Nav.css';
 import Form from '../../Form';
+import logo from '../../images/logoRT.png'
 
 const Nav = ({movies}) => {
     
     return (
         <header className='navbar'>
-            <select id="sortSelection" className='dropdown'>
+            <img className='logo' alt='logo' src={logo} />
+            {/* <select id="sortSelection" className='dropdown'>
                 <option value='alphabetical'>Alphabetical </option>
                 <option value='movie rating high-low'>Movie Rating: High-Low </option>
                 <option value='year released high-low'>Year Released: High-Low </option>
@@ -22,7 +24,7 @@ const Nav = ({movies}) => {
                 <li>Family</li>
                 <li>Horror</li>
                 <li>Thriller</li>
-            </ul>
+            </ul> */}
             <Form movies={movies}/>
         </header>
     )

@@ -1,8 +1,12 @@
 .movieContainer {
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* display: grid; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* grid-template-columns: repeat(4, 1fr); */
     grid-gap: 20px;
     overflow-y: auto;
-    height: 95vh;
+    height: 93vh;
+    background-color: #199D55;
   }
