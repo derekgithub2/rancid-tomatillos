@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import './CurrentMovie.css'
 import backbutton from '../../images/backbutton.png' 
 import { Link } from 'react-router-dom'
-import { getSingleMovie } from '../../apiCalls';
+import { 
+    getSingleMovie,
+    getMovieVideo
+ } from '../../apiCalls';
 
 class CurrentMovie extends Component {
     constructor() {
         super()
         this.state = {
             currentMovie: '',
+            movieTrailer: '',
             error: ''
         }
     }
@@ -16,7 +20,13 @@ class CurrentMovie extends Component {
     componentDidMount() {
         getSingleMovie(this.props.currentMovieId)
             .then((data => this.setState({ currentMovie: data.movie })))
-            .catch(error => this.setState({ error: 'Something went wrong.' }))
+            .catch(error => this.setState({ error: 'Something went wrong displaying this movie.' }))
+        getMovieVideo(this.props.currentMovieId)
+            .then(data => {
+                let trailer = data.videos.find(video => video.type === 'Trailer')
+                this.setState({movieTrailer: trailer})
+            })
+            .catch(error => this.setState({ error: 'Something went wrong displaying this trailer.' }))
     }
 
     render() {
@@ -40,6 +50,8 @@ class CurrentMovie extends Component {
             return `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
         }
 
+        const trailerPath = `https://www.youtube.com/watch?v=${this.state.movieTrailer.key}`
+
         return (
             <div className="current-movie" style={currentMovieStyle}>
                 <aside className="left-section">
@@ -56,6 +68,9 @@ class CurrentMovie extends Component {
                         <p>Rating: {Number(this.state.currentMovie.average_rating).toFixed(2)}</p>
                         <p>Budget: {formatter.format(this.state.currentMovie.budget)}</p>
                         <p>Revenue: {formatter.format(this.state.currentMovie.revenue)}</p>
+                        <a href={trailerPath}>
+                            <button className='trailer-btn'>See Trailer</button>
+                        </a>
                     </section>
                 </aside>
             </div>

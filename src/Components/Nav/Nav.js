@@ -1,7 +1,9 @@
 import React from 'react';
 import './Nav.css';
+import Form from '../../Form';
 
-const Nav = () => {
+const Nav = ({movies}) => {
+    
     return (
         <header className='navbar'>
             <select id="sortSelection" className='dropdown'>
@@ -21,10 +23,7 @@ const Nav = () => {
                 <li>Horror</li>
                 <li>Thriller</li>
             </ul>
-            <form>
-                <input type="text" placeholder="Search.." name="search" />
-                <button type="submit">Submit</button>
-            </form>
+            <Form movies={movies}/>
         </header>
     )
 }

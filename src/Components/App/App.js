@@ -29,7 +29,7 @@ class App extends Component {
           <Route exact path='/' render={() => {
             return(
               <div>
-                <Nav />
+                <Nav movies={this.state.movies}/>
                 <Movies movies={this.state.movies}/>
               </div>
             )
