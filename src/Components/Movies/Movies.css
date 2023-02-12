@@ -5,8 +5,8 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     /* grid-template-columns: repeat(4, 1fr); */
-    grid-gap: 20px;
+    grid-gap: 25px;
     overflow-y: auto;
-    height: 93vh;
-    background-color: #199D55;
+    height: 88vh;
+    background-color: #222222;
   }
