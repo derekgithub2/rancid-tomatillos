@@ -6,6 +6,8 @@ import {
     getSingleMovie,
     getMovieVideo
  } from '../../apiCalls';
+ import ReactStars from 'react-stars'
+
 
 class CurrentMovie extends Component {
     constructor() {
@@ -52,6 +54,8 @@ class CurrentMovie extends Component {
 
         const trailerPath = `https://www.youtube.com/watch?v=${this.state.movieTrailer.key}`
 
+        const updatedRating = this.state.currentMovie.average_rating/2
+
         return (
             <div className="current-movie" style={currentMovieStyle}>
                 <aside className="left-section">
@@ -64,12 +68,19 @@ class CurrentMovie extends Component {
                             <p>{toHoursAndMinutes(this.state.currentMovie.runtime)}</p>
                         </div>
                         <p className='title'>{this.state.currentMovie.title} ({String(this.state.currentMovie.release_date).slice(0,4)})</p>
+                        <ReactStars
+                            count={5}
+                            value={updatedRating}
+                            half={true}
+                            size={20}
+                            color2={'#ffd700'}
+                            edit={false}
+                         />
                         <p className='overview'>{this.state.currentMovie.overview}</p>
-                        <p>Rating: {Number(this.state.currentMovie.average_rating).toFixed(2)}</p>
-                        <p>Budget: {formatter.format(this.state.currentMovie.budget)}</p>
-                        <p>Revenue: {formatter.format(this.state.currentMovie.revenue)}</p>
+                        {/* <p>Budget: {formatter.format(this.state.currentMovie.budget)}</p>
+                        <p>Revenue: {formatter.format(this.state.currentMovie.revenue)}</p> */}
                         <a href={trailerPath}>
-                            <button className='trailer-btn'>See Trailer</button>
+                            <button className='trailer-btn'><span className="text">See Trailer</span></button>
                         </a>
                     </section>
                 </aside>
