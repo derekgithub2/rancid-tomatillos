@@ -1,12 +1,12 @@
 .card {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     /* border: 5px solid black; */
     /* padding: 10px; */
     /* background-color: white; */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 60vh;
     width: 20vw;
     box-shadow: 5px 5px 10px rgb(117 117 117);
     border-radius: 10px;
@@ -14,9 +14,9 @@
 }
 
 .card > img {
-    object-fit: cover;
+    object-fit: contain;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     cursor: pointer;
     border-radius: 10px;
 }
