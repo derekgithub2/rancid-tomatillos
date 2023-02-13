@@ -34,7 +34,7 @@ class Form extends Component {
         return(
             <div>
                 <form onChange={this.onChange}>
-                    <input type="text" list="titles" placeholder="Search.."  autoComplete="off" name="search" />
+                    <input type="text" list="titles" placeholder="Search.."  autoComplete="off" name="search" required/>
                     <datalist id="titles">{movieTitles}</datalist>
                     <Link to={`/${this.state.searched}`}>
                         <button onClick={this.handleSubmit} type="submit">Submit</button>

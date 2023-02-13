@@ -1,12 +1,11 @@
 .movieContainer {
-    padding: 20px;
-    /* display: grid; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /* grid-template-columns: repeat(4, 1fr); */
-    grid-gap: 25px;
-    overflow-y: auto;
-    height: 88vh;
-    background-color: #222222;
-  }
+  background-color: #222222;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 5vh;
+  height: 82vh;
+  justify-content: space-evenly;
+  overflow-y: auto;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
+}

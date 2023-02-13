@@ -1,64 +1,53 @@
-/* .current-movie {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
 .left-section {
-    width: 40vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    /* font-size: large; */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    font-size: 2vh;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 2vh;
+  height: 100vh;
+  width: 40vw;
 }
 
 .button-wrapper {
-    height: 10vh;
-    width: inherit;
+  height: 10vh;
+  width: inherit;
 }
 
 .back-button {
-    position: absolute;
-    cursor: pointer;
-    top: 2vh;
-    left: 2vh;
-    height: 5vh;
+  cursor: pointer;
+  height: 5vh;
+  left: 2vh;
+  position: absolute;
+  top: 2vh;
 }
 
 .movieDetails {
-    display: flex;
-    flex-direction: row;
-    width: 30vw;
-    justify-content: space-evenly;
-    font-size: 2vh;
-    font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  font-size: 2vh;
+  font-weight: bold;
+  justify-content: space-evenly;
+  width: 30vw;
 }
 
 .title {
-    font-size: 5vh;
-    font-weight: bold;
-    width: 30vw;
-    margin-bottom: 2.5vh;
+  font-size: 5vh;
+  font-weight: bold;
+  width: 30vw;
 }
 
 .overview {
-    width: 30vw;
-    font-size: 2.5vh;
-    padding-bottom: 5vh;
+  font-size: 2.5vh;
+  padding-bottom: 5vh;
+  width: 30vw;
 }
 
 
-/* CSS */
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-/* CSS */
 .trailer-btn {
   align-items: center;
   background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -66,6 +55,7 @@ a {
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
+  cursor: pointer;
   color: #FFFFFF;
   display: flex;
   font-family: Phantomsans, sans-serif;
@@ -74,11 +64,10 @@ a {
   max-width: 100%;
   padding: 3px;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
+  user-select: none;
   white-space: nowrap;
-  cursor: pointer;
+  -webkit-user-select: none;
 }
 
 .trailer-btn:active,
@@ -88,11 +77,11 @@ a {
 
 .trailer-btn span {
   background-color: rgb(5, 6, 45);
-  padding: 2vh 2vw;
   border-radius: 6px;
-  width: 100%;
   height: 100%;
+  padding: 2vh 2vw;
   transition: 300ms;
+  width: 100%;
 }
 
 .trailer-btn:hover span {
