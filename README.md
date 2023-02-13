@@ -16,10 +16,14 @@
 
 
 ## Contributors
-- Matt Rowan|[GitHub](https://github.com/MRowan121)|[LinkedIn](https://www.linkedin.com/in/mrowan121/)
-- Derek Yeh|[GitHub](https://github.com/derekgithub2)|[LinkedIn](https://www.linkedin.com/in/derekyeh/)
+- Matt Rowan | [GitHub](https://github.com/MRowan121) | [LinkedIn](https://www.linkedin.com/in/mrowan121/)
+- Derek Yeh | [GitHub](https://github.com/derekgithub2) | [LinkedIn](https://www.linkedin.com/in/derekyeh/)
 
 ## Goals
+- Gain competency with React fundamentals
+- Learn how to test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
 
 *More information can be found on [the official project specifications document](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).*
 
