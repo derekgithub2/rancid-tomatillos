@@ -8,7 +8,12 @@
 
 .left-section {
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: 
+    linear-gradient(90deg, 
+      rgba(0,0,0,0.75) 30%, 
+      rgba(0,0,0,0.5) 60%, 
+      rgba(0,0,0,0.25) 90%, 
+      rgba(0,0,0,0) 100%);
   color: white;
   display: flex;
   flex-direction: column;
