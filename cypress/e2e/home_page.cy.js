@@ -2,30 +2,6 @@ describe('Home page', () => {
     beforeEach(() => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies')
         cy.visit('http://localhost:3000/')
-
-    })
-
-    it('should display a navigation bar with a list of genres', () => {
-        cy.get('ul')
-          .should('contain.text', 'Action')
-          .should('contain.text', 'Drama')
-          .get('li').should('have.length', 6)
-    })
-
-    it('should have a drop down menu with genres to sort by', () => {
-        cy.get('.dropdown')
-          .get('option').should('have.length', 7)
-          .should('contain.text', 'Alphabetical')
-          .should('contain.text', 'Movie Rating: High-Low')
-          .should('not.have.text', 'Budget: High-Low')
-          // come back to add happy/sad path for sorting functionality
-    })
-
-    it('should be able to change the drop down option', () => {
-        cy.get('.dropdown')
-        .should('have.value', 'alphabetical')
-        .select('Revenue: High-Low')
-        .should('have.value', 'revenue high-low')
     })
 
     it('should have a search bar and select input fields', () => {
@@ -36,22 +12,27 @@ describe('Home page', () => {
           .should('have.value', 'Mulan')
     })
 
-    it('should not be able to search if input field is empty', () => {
-        // come back to write test when search functionality is implemented
+    it('should show an error message if the user clicks search with an empty search input', () => {
+        cy.get('form')
+          .get('input[type="text"]')
+          .get('button')
+          .click()
+          
+        cy.get('.swal-modal')
+          .should('be.visible')
     })
 
-    it('should be able to filter movies based on the user input', () => {
-        // come back to write test
+    it('should have a list of movie options from the search bar', () => {
+        cy.get('#titles option').should('have.length', 40)
     })
 
     it('should be able to open movie details when user clicks submit', () => {
-        
-        // return to write test when functionality built out
-        // potential sad path when user types wrong movie name?
+        cy.get('input').type('Black Adam').get('button').click()
+        cy.wait(5000)
+        cy.url().should('eq','http://localhost:3000/436270')
     })
 
     it('should display movies on the page', () => {
-
         cy.get('.movieContainer').children()
           .should('have.length', 40)
           .find('img')
