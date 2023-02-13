@@ -77,14 +77,17 @@ class CurrentMovie extends Component {
                                     <p>{toHoursAndMinutes(this.state.currentMovie.runtime)}</p>
                                 </div>
                                 <p className='title'>{this.state.currentMovie.title} ({String(this.state.currentMovie.release_date).slice(0,4)})</p>
-                                <ReactStars
-                                    count={5}
-                                    value={updatedRating}
-                                    half={true}
-                                    size={20}
-                                    color2={'#ffd700'}
-                                    edit={false}
-                                />
+                                <div className='star-ratings'>
+                                    <ReactStars
+                                        className='star-ratings'
+                                        count={5}
+                                        value={updatedRating}
+                                        half={true}
+                                        size={'3vh'}
+                                        color2={'#ffd700'}
+                                        edit={false}
+                                    />
+                                </div>
                                 <p className='overview'>{this.state.currentMovie.overview}</p>
                                 <a href={trailerPath}>
                                     <button className='trailer-btn'><span className="text">See Trailer</span></button>
