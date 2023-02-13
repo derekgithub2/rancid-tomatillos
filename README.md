@@ -4,9 +4,9 @@
 ## Table of Contents
   * [Goals](#goals)
   * [Set-Up Instructions](#set-up-instructions)
-  * [Contributors](#Contributors)
   * [Demonstration](#demonstration)
   * [Technologies Used](#technologies-used)
+  * [Contributors](#Contributors)
 
 ## Goals
 - Gain competency with React fundamentals
@@ -35,10 +35,6 @@
    Example: http://localhost:3000/
    ```
 
-## Contributors
-- Matt Rowan | [GitHub](https://github.com/MRowan121) | [LinkedIn](https://www.linkedin.com/in/mrowan121/)
-- Derek Yeh | [GitHub](https://github.com/derekgithub2) | [LinkedIn](https://www.linkedin.com/in/derekyeh/)
-
 ## Demonstration
 
 
@@ -50,3 +46,7 @@
   <img src="https://img.shields.io/badge/-CSS3-315780?logo=css3&style=for-the-badge" width="100" height="30"/>
   <img src="https://img.shields.io/badge/-npm-c12127?logo=npm&logoColor=white&style=for-the-badge" width="80"  height="30"/>
 </div>
+
+## Contributors
+- Matt Rowan | [GitHub](https://github.com/MRowan121) | [LinkedIn](https://www.linkedin.com/in/mrowan121/)
+- Derek Yeh | [GitHub](https://github.com/derekgithub2) | [LinkedIn](https://www.linkedin.com/in/derekyeh/)
