@@ -45,6 +45,10 @@
   width: 30vw;
 }
 
+.star-ratings {
+  font-size: 3vh;
+}
+
 .overview {
   font-size: 2.5vh;
   padding-bottom: 5vh;
