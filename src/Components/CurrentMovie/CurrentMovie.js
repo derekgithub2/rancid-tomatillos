@@ -77,8 +77,8 @@ class CurrentMovie extends Component {
                             edit={false}
                          />
                         <p className='overview'>{this.state.currentMovie.overview}</p>
-                        {/* <p>Budget: {formatter.format(this.state.currentMovie.budget)}</p>
-                        <p>Revenue: {formatter.format(this.state.currentMovie.revenue)}</p> */}
+                        <p>Budget: {formatter.format(this.state.currentMovie.budget)}</p>
+                        <p>Revenue: {formatter.format(this.state.currentMovie.revenue)}</p>
                         <a href={trailerPath}>
                             <button className='trailer-btn'><span className="text">See Trailer</span></button>
                         </a>

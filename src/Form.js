@@ -1,18 +1,26 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert'
 
 class Form extends Component {
     constructor() {
         super()
         this.state = {
-            searched: ''
+            searched: '',
+            error: ''
         }
     }
 
-    handleEvent = (e) => {
-        e.preventDefault();
-        const singleMovie = this.props.movies.filter(movie => movie.title === e.target.value)
-        this.setState({ searched: singleMovie[0].id})
+    onChange = (e) => {
+        const singleMovie = this.props.movies.find(movie => movie.title === e.target.value)
+        this.setState({ searched: singleMovie === undefined ? '' : singleMovie.id})
+    }
+
+    handleSubmit = (e) => {
+        if(this.state.searched === '') {
+            this.setState({ error: "Incorrect movie input"})
+            swal('Movie Title Not Found', 'Please try again!', 'error');
+        }
     }
 
     render() {
@@ -24,13 +32,15 @@ class Form extends Component {
         })
 
         return(
-            <form onChange={this.handleEvent}>
-                <input type="text" list="titles" placeholder="Search.."  autoComplete="off" name="search" />
-                <datalist id="titles">{movieTitles}</datalist>
-                <Link to={`/${this.state.searched}`}>
-                    <button type="submit">Submit</button>
-                </Link>
-            </form>
+            <div>
+                <form onChange={this.onChange}>
+                    <input type="text" list="titles" placeholder="Search.."  autoComplete="off" name="search" />
+                    <datalist id="titles">{movieTitles}</datalist>
+                    <Link to={`/${this.state.searched}`}>
+                        <button onClick={this.handleSubmit} type="submit">Submit</button>
+                    </Link>
+                </form>
+            </div>
         )
     }
 }
