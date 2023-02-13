@@ -1,50 +1,104 @@
-/* .current-movie {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
+.loading-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+ }
 
 .left-section {
-    width: 40vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    /* font-size: large; */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 2vh;
+  height: 100vh;
+  width: 40vw;
 }
 
 .button-wrapper {
-    height: 10vh;
-    width: inherit;
+  height: 10vh;
+  width: inherit;
 }
 
 .back-button {
-    position: absolute;
-    cursor: pointer;
-    top: 2vh;
-    left: 2vh;
-    height: 5vh;
+  cursor: pointer;
+  height: 5vh;
+  left: 2vh;
+  position: absolute;
+  top: 2vh;
 }
 
 .movieDetails {
-    display: flex;
-    flex-direction: row;
-    width: 30vw;
-    justify-content: space-evenly;
-    font-size: 2vh;
-    font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  font-size: 2vh;
+  font-weight: bold;
+  justify-content: space-evenly;
+  width: 30vw;
 }
 
 .title {
-    font-size: 5vh;
-    font-weight: bold;
-    width: 30vw;
+  font-size: 5vh;
+  font-weight: bold;
+  width: 30vw;
 }
 
 .overview {
-    width: 30vw;
-    font-size: 2.5vh;
+  font-size: 2.5vh;
+  padding-bottom: 5vh;
+  width: 30vw;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.trailer-btn {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  padding: 3px;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+}
+
+.trailer-btn:active,
+.trailer-btn:hover {
+  outline: 0;
+}
+
+.trailer-btn span {
+  background-color: rgb(5, 6, 45);
+  border-radius: 6px;
+  height: 100%;
+  padding: 2vh 2vw;
+  transition: 300ms;
+  width: 100%;
+}
+
+.trailer-btn:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .trailer-btn {
+    font-size: 3vh;
+    min-width: 15vw;
+  }
 }
