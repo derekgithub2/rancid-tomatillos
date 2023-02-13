@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Card = ({ image, title, id }) => {
     return (
-        <Link to={`/${id}`} className='card' >
-            <img src={image} alt={title} id={id}/>
+        <Link to={`/${id}`}>
+            <img className='card' src={image} alt={title} id={id}/>
         </Link>
     )
 }
