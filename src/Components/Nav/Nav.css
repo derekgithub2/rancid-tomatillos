@@ -12,24 +12,3 @@ header {
 .logo {
     height: 5vh;
 }
-
-.dropdown {
-    height: 50%;
-}
-
-li {
-    padding: 10px;
-    transition: transform 750ms;
-    will-change: transform;
-}
-li:hover,
-li:focus {
-    cursor: pointer;
-    padding: 10px;
-    transform: translateY(-10px);
-}
-
-ul {
-    display: flex;
-    list-style: none;
-}
