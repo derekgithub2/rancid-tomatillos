@@ -1,11 +1,12 @@
 header {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* border: 1px solid black;  */
-    height: 7vh;
     background-color: #094725;
-    padding: 1vh 1vw;
+    display: flex;
+    height: 8vh;
+    justify-content: space-between;
+    padding-left: 2vw;
+    padding-right: 2vw;
+
 }
 
 .logo {
@@ -23,8 +24,8 @@ li {
 }
 li:hover,
 li:focus {
-    padding: 10px;
     cursor: pointer;
+    padding: 10px;
     transform: translateY(-10px);
 }
 
