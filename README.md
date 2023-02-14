@@ -36,6 +36,11 @@
    ```
 
 ## Demonstration
+![movie_details](https://user-images.githubusercontent.com/110955503/218611852-469465d6-e4e5-4f7f-82fa-b4da2247f1e1.gif)
+![movie_search](https://user-images.githubusercontent.com/110955503/218612360-1ff00310-5682-4f2d-bb87-e9fda7f58053.gif)
+![movie_trailer](https://user-images.githubusercontent.com/110955503/218612368-da15cc45-293c-4fb4-9c4a-7ece3c880208.gif)
+
+
 
 
 
@@ -43,10 +48,11 @@
 ## Technologies Used
 <div>
   <img src="https://img.shields.io/badge/-react-333333?logo=react&style=for-the-badge" width="100" height="30"/>
-  <img src="https://img.shields.io/badge/-react%20router-f44250?logo=react%20router&logoColor=white&style=for-the-badge" width="140" height="30"/>
+  <img src="https://img.shields.io/badge/-react%20router-f44250?logo=react%20router&logoColor=white&style=for-the-badge" width="100" height="30"/>
   <img src="https://img.shields.io/badge/-cypress-007780?logo=cypress&logoColor=white&style=for-the-badge" width="100" height="30"/>
   <img src="https://img.shields.io/badge/-CSS3-315780?logo=css3&style=for-the-badge" width="100" height="30"/>
-  <img src="https://img.shields.io/badge/-npm-c12127?logo=npm&logoColor=white&style=for-the-badge" width="80"  height="30"/>
+  <img src="https://img.shields.io/badge/-npm-c12127?logo=npm&logoColor=white&style=for-the-badge" width="100"  height="30"/>
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" width="100" height="30" />
 </div>
 
 ## Contributors
