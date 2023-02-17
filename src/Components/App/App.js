@@ -40,6 +40,7 @@ class App extends Component {
                 return <CurrentMovie currentMovieId={id}/>
               }}
             />
+            {/* <Redirect> </Redirect> */}
         </Switch>
       </main>
     )

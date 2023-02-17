@@ -1,13 +1,19 @@
 import React from 'react';
 import './Card.css'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-const Card = (props) => {
+const Card = ({image, title, id}) => {
     return (
-        <Link to={`/${props.id}`}>
-            <img className='card' src={props.image} alt={props.title} id={props.id}/>
+        <Link to={`/${id}`}>
+            <img className='card' src={image} alt={title} id={id}/>
         </Link>
     )
 }
 
-export default Card
+export default Card;
+
+Card.propTypes = {
+    title: PropTypes.string,
+    id: PropTypes.number
+}
