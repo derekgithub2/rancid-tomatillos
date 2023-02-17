@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav'
 import Movies from '../Movies/Movies'
 import CurrentMovie from '../CurrentMovie/CurrentMovie'
 import { getAllMovies } from '../../apiCalls'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 
 class App extends Component {
@@ -26,19 +26,21 @@ class App extends Component {
   render() {
     return(
       <main className='app'>
+        <Switch>
           <Route exact path='/' render={() => {
-            return(
-              <div>
-                <Nav movies={this.state.movies}/>
-                <Movies movies={this.state.movies}/>
-              </div>
-            )
-          }}/>
-          <Route exact path='/:movieId' render={({ match }) => {
-              let id = parseInt(match.params.movieId)
-              return <CurrentMovie currentMovieId={id}/>
-            }}
-          />
+              return(
+                <div>
+                  <Nav movies={this.state.movies}/>
+                  <Movies movies={this.state.movies}/>
+                </div>
+              )
+            }}/>
+            <Route exact path='/:movieId' render={({ match }) => {
+                let id = parseInt(match.params.movieId)
+                return <CurrentMovie currentMovieId={id}/>
+              }}
+            />
+        </Switch>
       </main>
     )
   }
