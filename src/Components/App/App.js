@@ -27,7 +27,7 @@ class App extends Component {
     return(
       <main className='app'>
         <Switch>
-          <Route exact path='/' render={() => {
+          <Route path='/' render={() => {
               return(
                 <div>
                   <Nav movies={this.state.movies}/>
@@ -35,7 +35,7 @@ class App extends Component {
                 </div>
               )
             }}/>
-            <Route exact path='/:movieId' render={({ match }) => {
+            <Route path='/:movieId' render={({ match }) => {
                 let id = parseInt(match.params.movieId)
                 return <CurrentMovie currentMovieId={id}/>
               }}
