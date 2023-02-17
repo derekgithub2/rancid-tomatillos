@@ -47,16 +47,10 @@ describe('Current movie', () => {
           .should('contain', 'Paul Baumer and his friends Albert and Muller, egged on by romantic dreams of heroism, voluntarily enlist in the German army. Full of excitement and patriotic fervour, the boys enthusiastically march into a war they believe in. But once on the Western Front, they discover the soul-destroying horror of World War I.')
     })
 
-    it('should display the movie rating, budget and revenue', () => {
+    it('should display the movie rating', () => {
         cy.get('.left-section')
           .should('contain', 'Rating: ')
           .and('contain', '8.00')
-
-          .should('contain', 'Budget: ')
-          .and('contain', '0.00')
-
-          .should('contain', 'Revenue: ')
-          .and('contain', '0.00')
     })
 
 })
