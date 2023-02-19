@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import './CurrentMovie.css'
 import backbutton from '../../images/backbutton.png' 
 import { Link } from 'react-router-dom'
-import { 
-    getSingleMovie,
-    getMovieVideo
- } from '../../apiCalls';
+import { getAllData } from '../../apiCalls';
 import ReactStars from 'react-stars'
 
 
@@ -20,15 +17,15 @@ class CurrentMovie extends Component {
     }
 
     componentDidMount() {
-        getSingleMovie(this.props.currentMovieId)
+        getAllData(`/movies/${this.props.currentMovieId}`)
             .then((data => this.setState({ currentMovie: data.movie })))
-            .catch(error => this.setState({ error: 'Something went wrong displaying this movie.' }))
-        getMovieVideo(this.props.currentMovieId)
+            .catch(error => this.setState({ error: `${error} displaying this movie.` }))
+        getAllData(`/movies/${this.props.currentMovieId}/videos`)
             .then(data => {
                 let trailer = data.videos.find(video => video.type === 'Trailer')
                 this.setState({movieTrailer: trailer === undefined ? '' : trailer})
             })
-            .catch(error => this.setState({ error: 'Something went wrong displaying this trailer.' }))
+            .catch(error => this.setState({ error: `${error} displaying this trailer.` }))
     }
 
     render() {

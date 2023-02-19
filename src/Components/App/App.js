@@ -3,7 +3,7 @@ import './App.css';
 import Nav from '../Nav/Nav'
 import Movies from '../Movies/Movies'
 import CurrentMovie from '../CurrentMovie/CurrentMovie'
-import { getAllMovies } from '../../apiCalls'
+import { getAllData } from '../../apiCalls'
 import { Route, Switch } from 'react-router-dom'
 
 
@@ -18,9 +18,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getAllMovies()
+    getAllData('/movies')
     .then((data => this.setState({movies: data.movies})))
-    .catch(error => this.setState({error: 'Something went wrong.'}))
+    .catch(error => this.setState({error: `${error}`}))
   }
 
   render() {
