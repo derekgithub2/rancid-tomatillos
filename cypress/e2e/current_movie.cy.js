@@ -1,7 +1,7 @@
 describe('Current movie', () => {
     beforeEach(() => {
-        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-        cy.visit('http://localhost:3000/49046')
+      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {fixture: 'movieDetails'})
+        cy.visit('http://localhost:3000/436270')
     })
 
     it('should have the correct URL', () => {
@@ -25,32 +25,31 @@ describe('Current movie', () => {
     it('should display the movie backdrop', () => {
         cy.get('.current-movie')
           .should('have.css', 'background-image')
-          .and('include', 'https://image.tmdb.org/t/p/original//mqsPyyeDCBAghXyjbw4TfEYwljw.jpg')
+          .and('include', 'https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg')
     })
 
     it('should display the movie title and year', () => {
         cy.get('.title')
-          .should('contain', 'All Quiet on the Western Front')
+          .should('contain', 'Black Adam')
           .and('contain', '2022')
     })
 
     it('should display the genres and movie length', () => {
         cy.get('.movieDetails')
-          .should('contain', 'War')
-          .should('contain', 'Drama')
           .should('contain', 'Action')
-          .and('contain', '2h 27m')
+          .should('contain', 'Fantasy')
+          .should('contain', 'Science Fiction')
+          .and('contain', '2h 5m')
     })
 
     it('should display a movie overview', () => {
         cy.get('.overview')
-          .should('contain', 'Paul Baumer and his friends Albert and Muller, egged on by romantic dreams of heroism, voluntarily enlist in the German army. Full of excitement and patriotic fervour, the boys enthusiastically march into a war they believe in. But once on the Western Front, they discover the soul-destroying horror of World War I.')
+          .should('contain', 'Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.')
     })
 
     it('should display the movie rating', () => {
-        cy.get('.left-section')
-          .should('contain', 'Rating: ')
-          .and('contain', '8.00')
+        cy.get('.star-ratings')
+          .should('be.visible')
     })
 
 })

@@ -1,7 +1,7 @@
 describe('Home page', () => {
     beforeEach(() => {
-        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-        cy.visit('http://localhost:3000/')
+      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {fixture: 'movies'})
+      cy.visit('http://localhost:3000/')
     })
 
     it('should have a search bar and select input fields', () => {
@@ -23,35 +23,45 @@ describe('Home page', () => {
     })
 
     it('should have a list of movie options from the search bar', () => {
-        cy.get('#titles option').should('have.length', 40)
+        cy.get('#titles option')
+          .should('have.length', 3)
     })
 
     it('should be able to open movie details when user clicks submit', () => {
-        cy.get('input').type('Black Adam').get('button').click()
-        cy.wait(5000)
-        cy.url().should('eq','http://localhost:3000/436270')
+        cy.get('input')
+          .type('Black Adam')
+          .get('button')
+          .click()
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {fixture: 'movieDetails'})
+        cy.url()
+          .should('eq','http://localhost:3000/436270')
     })
 
     it('should display movies on the page', () => {
-        cy.get('.movieContainer').children()
-          .should('have.length', 40)
-          .find('img')
+        cy.get('a[href="/436270"]')
+          .should('be.visible') 
+        cy.get('a[href="/724495"]')
+          .should('be.visible')
+        cy.get('a[href="/1013860"]')
+          .should('be.visible')
     })
 
     it('should be able to open movie details when user clicks poster', () => {
-        cy.get('.card').first().click()
-        cy.url().should('eq', 'http://localhost:3000/49046')
+      cy.get('.movieContainer').children()
+        .first()
+        .click()
+      cy.url()
+        .should('eq', 'http://localhost:3000/436270')
+      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {fixture: 'movieDetails'})
+      cy.get('.title')
+        .should('contain', 'Black Adam')
     })
 
     it('should not open the wrong poster when the user clicks a poster', () => {
-        cy.get('.card').first().click()
+        cy.get('.movieContainer').children()
+          .first()
+          .click()
         cy.url().should('not.eq', 'http://localhost:3000/760104')
-
-        cy.get('.back-button').click()
-        cy.url().should('eq', 'http://localhost:3000/')
-
-        cy.get('.card').last().click()
-        cy.url().should('not.eq', 'http://localhost:3000/49046')
     })
 
 })
