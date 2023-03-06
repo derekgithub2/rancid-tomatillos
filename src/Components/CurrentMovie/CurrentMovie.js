@@ -4,7 +4,7 @@ import backbutton from '../../images/backbutton.png'
 import { Link } from 'react-router-dom'
 import { getAllData } from '../../apiCalls';
 import ReactStars from 'react-stars'
-
+import PropTypes from 'prop-types';
 
 class CurrentMovie extends Component {
     constructor() {
@@ -82,5 +82,8 @@ class CurrentMovie extends Component {
     }
 }
 
-
 export default CurrentMovie
+
+CurrentMovie.propTypes = {
+    currentMovieId: PropTypes.number
+}
